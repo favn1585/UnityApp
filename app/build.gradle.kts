@@ -52,9 +52,12 @@ android {
 }
 
 dependencies {
+    api(project(":repository"))
+    api(project(":domain"))
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

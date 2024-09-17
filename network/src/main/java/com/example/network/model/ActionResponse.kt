@@ -3,7 +3,9 @@ package com.example.network.model
 import com.example.domain.entity.Action
 import com.example.domain.entity.ActionType
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class ActionResponse(
     @Json(name = "type")
     val type: String,
@@ -22,7 +24,7 @@ data class ActionResponse(
 )
 
 fun ActionResponse.toActions() = Action(
-    type = ActionType.valueOf(type),
+    type = ActionType.valueOf(type.uppercase()),
     enabled = enabled,
     priority = priority,
     validDays = validDays,

@@ -23,3 +23,4 @@ rootProject.name = "Unity App"
 include(":app")
 include(":domain")
 include(":network")
+include(":repository")
