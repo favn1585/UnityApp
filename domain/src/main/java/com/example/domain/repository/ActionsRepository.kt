@@ -1,7 +1,7 @@
 package com.example.domain.repository
 
-import kotlinx.coroutines.flow.Flow
+import com.example.domain.entity.Action
 
 interface ActionsRepository {
-    fun observeActions(): Flow<List<String>>
+    suspend fun getActions(): List<Action>
 }
